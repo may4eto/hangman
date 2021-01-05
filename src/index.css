@@ -1,13 +1,43 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "Inter UI";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.letter {
+    background-color: white;
+    border: 1px solid grey;
+    float: left;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    height: 32px;
+    width: 32px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+}
+
+.letter-button {
+    float: left;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    height: 32px;
+    width: 32px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align:center;
+    outline: none;
+}
+
+.found {
+    color: green;
+}
+
+.missed {
+    color: red;
 }
