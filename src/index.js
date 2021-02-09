@@ -112,7 +112,7 @@ class Gameboard extends React.Component {
         let letters = [];
         this.props.targetWord.split("").forEach((letter, index) => {
             const letterMap = this.state.targetLetters[index];
-            const show = this.state.status === "Game over!" ? true : letterMap.show;
+            const show = this.state.status === "Game Over!" ? true : letterMap.show;
             letters.push(<Letter value={letter} key={index} found={show}/>)
         });
 
