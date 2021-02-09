@@ -151,9 +151,9 @@ class Hangman extends React.Component {
             <div className="container-fluid min-vh-100">
                 <div className="row mt-5">
                     <div className="col-12 d-flex align-items-center justify-content-center">
-                        <div className="wrapper d-flex flex-column align-items-center justify-content-center bg-white p-5">
-                            <h1 className="">Hangman</h1>
-                            <h3 className="mb-4">Welcome to my game!</h3>
+                        <div className="wrapper d-flex flex-column align-items-center justify-content-center bg-white py-4 px-3 p-md-5">
+                            <h1 className="text-center">Hangman</h1>
+                            <h3 className="text-center mb-4">Welcome to my game!</h3>
                             <div className="mb-5 pb-5">
                                 {this.state.targetWord === "" ? <p>Loading...</p> : <Gameboard targetWord={this.state.targetWord} misses="10"/> }
                             </div>
