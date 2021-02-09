@@ -140,7 +140,7 @@ class Hangman extends React.Component {
         }
     }
     componentDidMount() {
-        fetch("https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=p7ahenott7ylvlxk6wtmlo1e3sf7hfr5im0dtgw1r5am7sjpo")
+        fetch("https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun%2Cadjective%2Cverb&excludePartOfSpeech=abbreviation%2Cfamily-name%2Cgiven-name&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=10&limit=1&api_key=p7ahenott7ylvlxk6wtmlo1e3sf7hfr5im0dtgw1r5am7sjpo")
         .then(response => response.json())
         .then(data => this.setState({
             targetWord: data[0]["word"]
