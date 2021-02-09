@@ -2,8 +2,25 @@
 
 body {
     font-family: "Inter UI";
+    background-image: url("https://picsum.photos/1500/1000?greyscale");
 }
 
+.container-fluid {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    max-width: 960px;
+    border-radius: 12px;
+}
+
+.letters {
+    height: 32px;
+    justify-self: center;
+}
 
 .letter {
     background-color: white;
@@ -32,12 +49,20 @@ body {
     padding: 0;
     text-align:center;
     outline: none;
+    border-style: none !important;
 }
 
 .found {
-    color: green;
+    color: white;
+    background-color: green;
 }
 
 .missed {
-    color: red;
+    color:white;
+    background-color: red;
+}
+
+.newGame {
+    margin-top: 16px;
+    padding: 8px;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class ButtonPad extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class ButtonPad extends React.Component {
         return map;
     }
     renderButton(letter){
-        let cls = "letter-button";
+        let cls = "letter-button rounded mr-2";
         if (this.state.letterMap[letter].clicked) {
             cls = cls + " " + this.state.letterMap[letter].cls;
         }
@@ -44,9 +45,9 @@ class ButtonPad extends React.Component {
         this.state.letterClickHandler(letter);
     }
     render () {
-        const letterGrid = this.state.letters.map((row, index) => <div key={index}><p>{row.map(letter => this.renderButton(letter))}</p><br/></div>)
+        const letterGrid = this.state.letters.map((row, index) => <div key={index} className="d-flex justify-content-center"><p>{row.map(letter => this.renderButton(letter))}</p><br/></div>)
         return (
-            <div>
+            <div className = "letterGrid">
                 {letterGrid}
             </div>
         )
@@ -104,25 +105,27 @@ class Gameboard extends React.Component {
             status: status ? "You Win!" : "Playing"
         });
     }
+
     render () {
         const remaining = "Remaining Misses: "+this.state.remainingMisses;
         const status = "Game Status: " + this.state.status;
         let letters = [];
         this.props.targetWord.split("").forEach((letter, index) => {
             const letterMap = this.state.targetLetters[index];
-            const show = letterMap.show;
+            const show = this.state.status === "Game over!" ? true : letterMap.show;
             letters.push(<Letter value={letter} key={index} found={show}/>)
         });
 
         return (
-            <div>
-                <p>{remaining}</p>
-                <p>{status}</p>
-                {letters}
-                <br/>
-                <br/>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+                <p className="text-center mb-2">{status}</p>
+                <p className="text-center mb-4">{remaining}</p>
+                <div className="letters mb-4">{letters}</div>
                 <div>
                     {this.state.status === "Playing" && <ButtonPad targetWord={this.props.targetWord} letterClick={this.checkLetterHandler}/>}
+                </div>
+                <div>
+                    {this.state.status != "Playing" && <button className="btn btn-dark" onClick={()=>window.location.reload(false)}>Another game?</button>}
                 </div>
             </div>
         )
@@ -130,13 +133,33 @@ class Gameboard extends React.Component {
 }
 
 class Hangman extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+            targetWord: ""
+        }
+    }
+    componentDidMount() {
+        fetch("https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=p7ahenott7ylvlxk6wtmlo1e3sf7hfr5im0dtgw1r5am7sjpo")
+        .then(response => response.json())
+        .then(data => this.setState({
+            targetWord: data[0]["word"]
+        })); 
+    }
     render(){
         return (
-            <div>
-                <h1>Hangman Clone</h1>
-                <p>Welcome to my game!</p>
-                <div>
-                    <Gameboard targetWord="apple" misses="10"/>
+            <div className="container-fluid min-vh-100">
+                <div className="row mt-5">
+                    <div className="col-12 d-flex align-items-center justify-content-center">
+                        <div className="wrapper d-flex flex-column align-items-center justify-content-center bg-white p-5">
+                            <h1 className="">Hangman</h1>
+                            <h3 className="mb-4">Welcome to my game!</h3>
+                            <div className="mb-5 pb-5">
+                                {this.state.targetWord === "" ? <p>Loading...</p> : <Gameboard targetWord={this.state.targetWord} misses="10"/> }
+                            </div>
+                            <footer className="text-center small text-secondary">Maya Mircheva @ EnvatoTuts, 2021</footer>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
