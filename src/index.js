@@ -125,7 +125,7 @@ class Gameboard extends React.Component {
                     {this.state.status === "Playing" && <ButtonPad targetWord={this.props.targetWord} letterClick={this.checkLetterHandler}/>}
                 </div>
                 <div>
-                    {this.state.status != "Playing" && <button className="btn btn-dark" onClick={()=>window.location.reload(false)}>Another game?</button>}
+                    {this.state.status !== "Playing" && <button className="btn btn-dark" onClick={()=>window.location.reload(false)}>Another game?</button>}
                 </div>
             </div>
         )
