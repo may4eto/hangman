@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hangman",
+  "name": "Just another hangman game",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,9 +9,39 @@
       "purpose": "maskable"
     },
     {
+      "src": "logo120.png",
+      "type": "image/png",
+      "sizes": "120x120",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo144.png",
+      "type": "image/png",
+      "sizes": "144x144", 
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo152.png",
+      "type": "image/png",
+      "sizes": "152x152", 
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo167.png",
+      "type": "image/png",
+      "sizes": "167x167", 
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo180.png",
+      "type": "image/png",
+      "sizes": "180x180", 
+      "purpose": "maskable"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192",
+      "sizes": "192x192", 
       "purpose": "maskable"
     },
     {
