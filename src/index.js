@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 class ButtonPad extends React.Component {
     constructor(props) {
@@ -170,3 +171,5 @@ ReactDOM.render (
     <Hangman />,
     document.getElementById('root')
 )
+
+serviceWorkerRegistration.register();
