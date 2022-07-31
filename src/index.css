@@ -1,72 +1,69 @@
-@import url('https://rsms.me/inter/inter-ui.css');
+@import url("https://rsms.me/inter/inter-ui.css");
 
 body {
-    font-family: "Inter UI";
-    background-image: url("https://picsum.photos/1500/1000?greyscale");
+  font-family: "Inter UI";
+  background-image: url("https://picsum.photos/1920/1280?greyscale");
 }
 
 .container-fluid {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
-    max-width: 960px;
-    border-radius: 12px;
+  max-width: 960px;
+  border-radius: 12px;
 }
 
 .letters {
-    height: 32px;
-    justify-self: center;
+  height: 32px;
+  justify-self: center;
 }
 
 .letter {
-    background-color: white;
-    border: 1px solid grey;
-    float: left;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25;
-    height: 32px;
-    width: 32px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
+  background-color: white;
+  border: 1px solid grey;
+  float: left;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  height: 32px;
+  width: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
 }
 
 .letter-button {
-    float: left;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25;
-    height: 32px;
-    width: 32px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align:center;
-    outline: none;
-    border-style: none !important;
-    background-color: #D8D8D8;
+  float: left;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  height: 32px;
+  width: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  border-style: none !important;
+  background-color: #d8d8d8;
 }
 
 .found {
-    color: white;
-    background-color: green;
+  color: white;
+  background-color: green;
 }
 
 .missed {
-    color:white;
-    background-color: red;
+  color: white;
+  background-color: red;
 }
 
 .newGame {
-    margin-top: 16px;
-    padding: 8px;
+  margin-top: 16px;
+  padding: 8px;
 }
-
-
-  
